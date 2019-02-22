@@ -17,16 +17,16 @@
         init();
 
         function init() {
-            vm.dataPrediction = dataSheetService.getPrediction();
-            if (vm.dataPrediction !== undefined && vm.dataPrediction !== null) {
-                if (vm.dataPrediction.Prediction.predictedLabel === "M") {
+            if (dataSheetService.getPrediction() !== undefined && dataSheetService.getPrediction() !== null) {
+                vm.dataPrediction = angular.fromJson(dataSheetService.getPrediction());
+                if (vm.dataPrediction[0].prediction === "M") {
                     vm.dataShow.color="#e60000";
                     vm.dataShow.text ="Malignant tumor";
-                    vm.dataShow.percent = vm.dataPrediction.Prediction.predictedScores.M;
+                    vm.dataShow.percent = vm.dataPrediction[0].predicted_scores;
                 } else {
                     vm.dataShow.color="#29a329";
                     vm.dataShow.text ="Benign tumor";
-                    vm.dataShow.percent = vm.dataPrediction.Prediction.predictedScores.B;
+                    vm.dataShow.percent = vm.dataPrediction[0].predicted_scores;
                 }
             } else {
                 vm.dataShow.color="#FFFF";

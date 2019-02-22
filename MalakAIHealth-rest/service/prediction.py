@@ -51,7 +51,7 @@ def prediction(df_data, default=True, model_id=None, endpoint=None, local_train=
         response = s3_client.predict(
             MLModelId=model_id,
             Record={
-            "id": str(df_data['id']),
+            "id": "1",
             "radius_mean": str(df_data['radius_mean']),
             "texture_mean": str(df_data['texture_mean']),
             "perimeter_mean": str(df_data['perimeter_mean']),
@@ -59,7 +59,7 @@ def prediction(df_data, default=True, model_id=None, endpoint=None, local_train=
             "smoothness_mean": str(df_data['smoothness_mean']),
             "compactness_mean": str(df_data['compactness_mean']),
             "concavity_mean": str(df_data['concavity_mean']),
-            "concave points_mean": str(df_data['concave points_mean']),
+            "concave points_mean": str(df_data['concave_points_mean']),
             "symmetry_mean": str(df_data['symmetry_mean']),
             "fractal_dimension_mean": str(df_data['fractal_dimension_mean']),
             "radius_se": str(df_data['radius_se']),
@@ -69,7 +69,7 @@ def prediction(df_data, default=True, model_id=None, endpoint=None, local_train=
             "smoothness_se": str(df_data['smoothness_se']),
             "compactness_se": str(df_data['compactness_se']),
             "concavity_se": str(df_data['concavity_se']),
-            "concave points_se": str(df_data['concave points_se']),
+            "concave points_se": str(df_data['concave_points_se']),
             "symmetry_se": str(df_data['symmetry_se']),
             "fractal_dimension_se": str(df_data['fractal_dimension_se']),
             "radius_worst": str(df_data['radius_worst']),
@@ -79,13 +79,13 @@ def prediction(df_data, default=True, model_id=None, endpoint=None, local_train=
             "smoothness_worst": str(df_data['smoothness_worst']),
             "compactness_worst": str(df_data['compactness_worst']),
             "concavity_worst": str(df_data['concavity_worst']),
-            "concave points_worst": str(df_data['concave points_worst']),
+            "concave points_worst": str(df_data['concave_points_worst']),
             "symmetry_worst": str(df_data['symmetry_worst']),
             "fractal_dimension_worst": str(df_data['fractal_dimension_worst']),
           },
         PredictEndpoint=endpoint
         )
-        df_result = df_result.append({'id': df_data['id'],
+        df_result = df_result.append({'id': '1',
                                       'prediction': response['Prediction']['predictedLabel'],
                                       'predicted_scores': response['Prediction']['predictedScores'][response['Prediction']['predictedLabel']]}, ignore_index=True)
 

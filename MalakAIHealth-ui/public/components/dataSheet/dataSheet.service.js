@@ -22,8 +22,12 @@ function dataSheetService($http, $q) {
         var defer = $q.defer();
 
         // $http.get('/predictionJson/prediction.json', JSON.stringify(data)).then(function (response) {
-        $http.post('/prediction', JSON.stringify(data)).then(function (response) {
-
+        $http.post('http://127.0.0.1:8888/prediction', JSON.stringify(data), {headers: {'Content-Type': 'application/json'} }).then(function (response) {
+            // $http({
+            //     method: 'POST',
+            //     url:'http://127.0.0.1:8888/prediction', 
+            //     data: JSON.stringify(data), 
+            //     headers: {'Content-Type': 'application/json'} }).then(function (response) {
             defer.resolve(response.data);
             
         }, function (response) {
