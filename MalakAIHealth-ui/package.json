@@ -1,0 +1,23 @@
+{
+    "name": "IAHackathon",
+    "version": "0.0.1",
+    "description": "IA Hackathon",
+    "dependencies": {
+        "express": "*"
+    },
+    "engine": "node >=0.6.x",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "author": "IAHackathon",
+    "license": "IAHackathon",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "/"
+}

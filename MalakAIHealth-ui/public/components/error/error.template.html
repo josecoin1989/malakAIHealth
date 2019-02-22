@@ -1,0 +1,15 @@
+<div layout="column" ng-cloak>
+    <md-toolbar class="md-warn">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">{{vmErrorController.dataPrediction.status}} {{vmErrorController.dataPrediction.statusText}}</h2>
+      </div>
+    </md-toolbar>
+  
+    <md-content flex layout-padding>
+      <p></p>
+      <div layout="row" layout-align="center start">
+            <md-button class="md-raised md-primary" ng-click="vmErrorController.back()">Start</md-button>
+      </div> 
+    </md-content>
+  
+  </div>

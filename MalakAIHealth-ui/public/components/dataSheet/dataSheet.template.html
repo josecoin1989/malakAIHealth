@@ -1,0 +1,413 @@
+<div ng-cloak>
+    <form name="dataSheet">
+    <md-content>
+      <md-tabs md-dynamic-height md-border-bottom md-selected="vmDataSheetController.selectedIndex">
+        <md-tab label="Means">
+          <md-content class="md-padding">
+            <div layout="column" ng-cloak class="md-inline-form">
+              <md-content layout-gt="row" layout-padding>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Radius</label>
+                    <input required name="radiusMeans" ng-model="vmDataSheetController.dataSheet.radius_mean" type="number" min="0" step="0.0000001">
+                    <div ng-messages="dataSheet.radiusMeans.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container flex>
+                    <label>Texture</label>
+                    <input name="textureMeans" required ng-model="vmDataSheetController.dataSheet.texture_mean" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.textureMeans.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Area</label>
+                      <input name="areaMeans" required ng-model="vmDataSheetController.dataSheet.area_mean" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.areaMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Perimeter</label>
+                      <input name="perimeterMeans" required ng-model="vmDataSheetController.dataSheet.perimeter_mean" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.perimeterMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Smoothness</label>
+                    <input required name="smoothnessMeans" ng-model="vmDataSheetController.dataSheet.smoothness_mean" type="number" min="0" step="0.0000001">
+                    <div ng-messages="dataSheet.smoothnessMeans.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container flex>
+                    <label>Compactness</label>
+                    <input name="compactnessMeans" required ng-model="vmDataSheetController.dataSheet.compactness_mean" type="number" min="0" step="0.0000001">
+                    <div ng-messages="dataSheet.compactnessMeans.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concavity</label>
+                      <input name="concavityMeans" required ng-model="vmDataSheetController.dataSheet.concavity_mean" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.concavityMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concave points</label>
+                      <input name="concaveMeans" required ng-model="vmDataSheetController.dataSheet.concave_points_mean" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.concaveMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                    <md-input-container flex>
+                      <label>Symmetry</label>
+                      <input required name="symmetryMeans" ng-model="vmDataSheetController.dataSheet.symmetry_mean" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.symmetryMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                    </md-input-container>
+              
+                    <md-input-container flex>
+                      <label>Fractal dimension</label>
+                      <input name="fractalMeans" required ng-model="vmDataSheetController.dataSheet.fractal_dimension_mean" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.fractalMeans.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                    </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start">
+                  <md-button class="md-raised md-primary" ng-click="vmDataSheetController.next()">Standart Error</md-button>
+              </div> 
+              </md-content>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Standard Error">
+          <md-content class="md-padding">
+            <div layout="column" ng-cloak class="md-inline-form">
+              <md-content layout-gt="row" layout-padding>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Radius</label>
+                    <input required name="radiusSE" ng-model="vmDataSheetController.dataSheet.radius_se" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.radiusSE.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container flex>
+                    <label>Texture</label>
+                    <input name="textureSE" required ng-model="vmDataSheetController.dataSheet.texture_se" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.textureSE.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Area</label>
+                      <input name="areaSE" required ng-model="vmDataSheetController.dataSheet.area_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.areaSE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Perimeter</label>
+                      <input name="perimeterSE" required ng-model="vmDataSheetController.dataSheet.perimeter_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.perimeterSE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Smoothness</label>
+                    <input required name="smoothnessSE" ng-model="vmDataSheetController.dataSheet.smoothness_se" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.smoothnessSE.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container flex>
+                    <label>Compactness</label>
+                    <input name="compactnessSE" required ng-model="vmDataSheetController.dataSheet.compactness_se" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.compactnessSE.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                        <div ng-message="min">
+                          This value must be greater than zero
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concavity</label>
+                      <input name="concavitySE" required ng-model="vmDataSheetController.dataSheet.concavity_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.concavitySE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concave points</label>
+                      <input name="concaveSE" required ng-model="vmDataSheetController.dataSheet.concave_points_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.concaveSE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                    <md-input-container flex>
+                      <label>Symmetry</label>
+                      <input required name="symmetrySE" ng-model="vmDataSheetController.dataSheet.symmetry_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.symmetrySE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                    </md-input-container>
+              
+                    <md-input-container flex>
+                      <label>Fractal dimension</label>
+                      <input name="fractalSE" required ng-model="vmDataSheetController.dataSheet.fractal_dimension_se" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.fractalSE.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                          <div ng-message="min">
+                            This value must be greater than zero
+                          </div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  <div layout="row" layout-align="center start">
+                    <md-button class="md-raised md-primary" ng-click="vmDataSheetController.back()">Means</md-button>
+                    <md-button class="md-raised md-primary" ng-click="vmDataSheetController.next()">Worst</md-button>
+                  </div>
+              </md-content>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Worst">
+          <md-content class="md-padding">
+            <div layout="column" ng-cloak class="md-inline-form">
+              <md-content layout-gt="row" layout-padding>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Radius</label>
+                    <input required name="radiusWorst" ng-model="vmDataSheetController.dataSheet.radius_worst" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.radiusWorst.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container>
+                    <label>Texture</label>
+                    <input name="textureWorst" required ng-model="vmDataSheetController.dataSheet.texture_worst" type="number" min="0" step="0.0000001">
+                    <div ng-messages="dataSheet.textureWorst.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Area</label>
+                      <input name="areaWorst" required ng-model="vmDataSheetController.dataSheet.area_worst" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.areaWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Perimeter</label>
+                      <input name="perimeterWorst" required ng-model="vmDataSheetController.dataSheet.perimeter_worst" type="number" min="0" step="0.0000001">
+                      <div ng-messages="dataSheet.perimeterWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                  <md-input-container flex>
+                    <label>Smoothness</label>
+                    <input required name="smoothnessWorst" ng-model="vmDataSheetController.dataSheet.smoothness_worst" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.smoothnessWorst.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                    </div>
+                  </md-input-container>
+            
+                  <md-input-container flex>
+                    <label>Compactness</label>
+                    <input name="compactnessWorst" required ng-model="vmDataSheetController.dataSheet.compactness_worst" type="number" min="0"  step="0.0000001">
+                    <div ng-messages="dataSheet.compactnessWorst.$error" multiple md-auto-hide="false">
+                        <div ng-message="required">
+                          This value is required
+                        </div>
+                    </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concavity</label>
+                      <input name="concavityWorst" required ng-model="vmDataSheetController.dataSheet.concavity_worst" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.concavityWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                  </md-input-container>
+  
+                  <md-input-container flex>
+                      <label>Concave points</label>
+                      <input name="concaveWorst" required ng-model="vmDataSheetController.dataSheet.concave_points_worst" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.concaveWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+
+                    <md-input-container flex>
+                      <label>Symmetry</label>
+                      <input required name="symmetryWorst" ng-model="vmDataSheetController.dataSheet.symmetry_worst" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.symmetryWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                    </md-input-container>
+
+                    <md-input-container flex>
+                      <label>Fractal dimension</label>
+                      <input name="fractalWorst" required ng-model="vmDataSheetController.dataSheet.fractal_dimension_worst" type="number" min="0"  step="0.0000001">
+                      <div ng-messages="dataSheet.fractalWorst.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                            This value is required
+                          </div>
+                      </div>
+                    </md-input-container>
+
+                  </div>
+                  <div layout="row" layout-align="center start">
+                    <md-button class="md-raised md-primary" ng-click="vmDataSheetController.back()">Standart errors</md-button>
+                    <md-button class="md-raised md-primary" ng-click="vmDataSheetController.send()">Send</md-button>
+                  </div> 
+              </md-content>
+            </div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </form>
+  </div>
+  
+  

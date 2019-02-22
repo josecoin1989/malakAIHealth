@@ -1,0 +1,13 @@
+{
+    "Prediction": {         
+        "details": {             
+            "Algorithm": "SGD",             
+            "PredictiveModelType": "MULTICLASS"         
+        },         
+        "predictedLabel": "B",
+        "predictedScores": {             
+            "M": 0.007686621975153685,             
+            "B": 0.9923133850097656         
+        }     
+    } 
+}

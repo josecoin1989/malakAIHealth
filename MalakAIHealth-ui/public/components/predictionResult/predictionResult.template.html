@@ -1,0 +1,25 @@
+<div layout="column" ng-cloak>
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2 class="md-flex">Result</h2>
+          </div>
+        </md-toolbar>
+      
+        <md-content flex layout-padding layout-align="center center">
+            <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                <md-whiteframe style="background-color: {{vmPredictionResultController.dataShow.color}}" class="md-whiteframe-24dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+                    <p>
+                        <span>{{vmPredictionResultController.dataShow.text}}:</span>
+                    </p>
+                    &nbsp;
+                    <p>
+                        <span>{{(vmPredictionResultController.dataShow.percent*100).toFixed(2)}}%</span>
+                    </p>
+                </md-whiteframe>
+            </div>
+            <div layout="row" layout-align="center start" layout-xs="column" layout-fill>
+                <md-button class="md-raised md-primary" ng-click="vmPredictionResultController.back()">Start</md-button>
+            </div>
+        </md-content>
+      
+      </div>
