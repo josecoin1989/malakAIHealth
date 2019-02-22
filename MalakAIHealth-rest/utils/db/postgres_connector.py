@@ -1,6 +1,5 @@
-import pandas as pd
 import logging
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine
 
 from utils.config import ConfigMalakAI
 from .sql_connector import SQLConnector
@@ -66,7 +65,6 @@ class PostgresConnector(SQLConnector):
                 PostgresConnector.get_port() + '/' + \
                 PostgresConnector.get_db()
             logger.info('Database connection: '+url)
-            Log.info('Database connection: '+url)
 
             PostgresConnector._engine = create_engine(
                 'postgresql://' +
