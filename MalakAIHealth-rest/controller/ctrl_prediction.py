@@ -25,10 +25,25 @@ def predict():
         data = df_mocked.iloc[num,:]
         result = prediction(data, local_train=True)
     else:
-        data = json.loads(request.data.decode('utf-8'))
+        try:
+            data = json.loads(request.data.decode('utf-8'))
 
-        result = prediction(data)
+            if 'radius_mean' not in data or 'texture_mean' not in data or 'perimeter_mean' not in data \
+                    or 'area_mean' not in data or 'smoothness_mean' not in data or 'compactness_mean' not in data \
+                    or 'concavity_mean' not in data or 'concave_points_mean' not in data or 'symmetry_mean' not in data \
+                    or 'fractal_dimension_mean' not in data or 'radius_se' not in data or 'texture_se' not in data \
+                    or 'perimeter_se' not in data or 'area_se' not in data or 'smoothness_se' not in data \
+                    or 'compactness_se' not in data or 'concavity_se' not in data or 'concave_points_se' not in data \
+                    or 'symmetry_se' not in data or 'fractal_dimension_se' not in data or 'radius_worst' not in data \
+                    or 'texture_worst' not in data or 'perimeter_worst' not in data or 'area_worst' not in data \
+                    or 'smoothness_worst' not in data or 'compactness_worst' not in data or 'concavity_worst' not in data \
+                    or 'concave_points_worst' not in data or 'symmetry_worst' not in data \
+                    or 'fractal_dimension_worst' not in data:
+                raise Exception("Not all the data informed")
 
+            result = prediction(data)
+        except Exception as e:
+            return jsonify({'Eror':str(e)})
     return jsonify(result.to_json(orient='records'))
 
 @app.route("/init_database", methods=['GET'])
