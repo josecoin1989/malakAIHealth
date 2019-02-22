@@ -4,7 +4,6 @@ from sqlalchemy import create_engine, MetaData
 
 from utils.config import ConfigMalakAI
 from .sql_connector import SQLConnector
-from zbxarchitecture import Log
 
 """
 Postgres connection engine.
