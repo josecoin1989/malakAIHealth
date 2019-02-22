@@ -1,0 +1,141 @@
+{
+  "version": "1.0",
+  "rowId": "id",
+  "rowWeight": null,
+  "targetAttributeName": "diagnosis",
+  "dataFormat": "CSV",
+  "dataFileContainsHeader": true,
+  "attributes": [
+    {
+      "attributeName": "id",
+      "attributeType": "CATEGORICAL"
+    },
+    {
+      "attributeName": "diagnosis",
+      "attributeType": "CATEGORICAL"
+    },
+    {
+      "attributeName": "radius_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "texture_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "perimeter_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "area_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "smoothness_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "compactness_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concavity_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concave points_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "symmetry_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "fractal_dimension_mean",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "radius_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "texture_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "perimeter_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "area_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "smoothness_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "compactness_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concavity_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concave points_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "symmetry_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "fractal_dimension_se",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "radius_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "texture_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "perimeter_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "area_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "smoothness_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "compactness_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concavity_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "concave points_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "symmetry_worst",
+      "attributeType": "NUMERIC"
+    },
+    {
+      "attributeName": "fractal_dimension_worst",
+      "attributeType": "NUMERIC"
+    }
+  ],
+  "excludedAttributeNames": [
+    
+  ]
+}
