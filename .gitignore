@@ -1,0 +1,4 @@
+__pycache__
+*.xml
+.idea
+workspace.xml
